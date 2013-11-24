@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Dekorator Logo</title>
+
+        <style>
+            html, body {
+                margin: 0px;
+            }
+
+            #container {
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                width: 223px;
+                height: 37px;
+                text-align: center;
+                -webkit-transform: translate(-50%,-50%);
+                -ms-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+            }
+
+            /* Ustawiamy klasy odpowiedzialne za wyświetlanie prawidłowego obrazka */
+            #logoDecoratorElement.christmasDecoration {
+                background: transparent url('images/boze-narodzenie.png') no-repeat center center;
+            }
+
+            #logoDecoratorElement.newYearsEveDecoration {
+                background: transparent url('images/sylwester.png') no-repeat center center;
+            }
+
+            #logoDecoratorElement.newYearDecoration {
+                background: transparent url('images/nowy-rok.png') no-repeat center center;
+            }
+
+            #logoDecoratorElement.easterDecoration {
+                background: transparent url('images/wielkanoc.png') no-repeat center center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <a href="http://grafmag.pl" id="logo"><img src="images/logo.png" alt="Grafmag"></a>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/logoDecorator.js"></script>
+        <script>
+            // Inicjujemy plugin.
+            $(window).ready(function() {
+                $('#logo img').logoDecorator({
+                    offsetX: 122.5,
+                    offsetY: 37,
+                    anchor: '#logo'
+                });
+            });
+        </script>
+    </body>
+</html>
