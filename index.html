@@ -5,21 +5,55 @@
 
         <title>Dekorator Logo</title>
 
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300&amp;subset=latin-ext" rel="stylesheet">
         <style>
             html, body {
                 margin: 0px;
+                font-family: Roboto, sans-serif;
             }
 
             #container {
                 position: fixed;
                 left: 50%;
                 top: 50%;
-                width: 223px;
-                height: 37px;
+                width: 500px;
+                height: 380px;
                 text-align: center;
                 -webkit-transform: translate(-50%,-50%);
                 -ms-transform: translate(-50%,-50%);
                 transform: translate(-50%,-50%);
+            }
+
+            #container h1 {
+                font-weight: normal;
+                color: #acb4bd;
+                font-weight: 300;
+                font-size: 46px;
+                margin-bottom: 50px;
+            }
+
+            #container form {
+                padding-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            #container form input {
+                font-family: Roboto,sans-serif;
+                color: #acb4bd;
+                font-size: 14px;
+                border: 1px solid #d8dee5;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                padding: 9px 14px;
+                width: 270px;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                height: 40px;
+            }
+
+            #container p {
+                color: #46494f;
+                line-height: 1.43em;
+                font-size: 14px;
             }
 
             /* Ustawiamy klasy odpowiedzialne za wyświetlanie prawidłowego obrazka */
@@ -42,7 +76,14 @@
     </head>
     <body>
         <div id="container">
+            <h1>Dekorator logo</h1>
             <a href="http://grafmag.pl" id="logo"><img src="images/logo.png" alt="Grafmag"></a>
+
+            <form action="#" onsubmit="return false;">
+                <input type="date" id="date" />
+            </form>
+
+            <p>Wybierz datę aby sprawdzić, jak w niej będzie wyglądało logo. Obsługiwane święta to, Boże Narodzenie, Sylwester, Nowy Rok oraz Wielkanoc.</p>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -54,6 +95,20 @@
                     offsetX: 122.5,
                     offsetY: 37,
                     anchor: '#logo'
+                });
+            });
+
+            $(function() {
+                $('#date').on('change', function() {
+                    $('#logo img').removeData('plugin_logoDecorator');
+                    $('#logoDecoratorElement').remove();
+
+                    $('#logo img').logoDecorator({
+                        date: $(this).val(),
+                        offsetX: 122.5,
+                        offsetY: 37,
+                        anchor: '#logo'
+                    });
                 });
             });
         </script>
