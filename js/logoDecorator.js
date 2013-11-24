@@ -29,8 +29,6 @@
         // Inicjujemy obiekt z datą dzisiejszą lub tą podaną w opcjach.
         today = this.options.date !== null ? new Date(this.options.date) : new Date();
 
-        isEaster();
-
         // Sprawdzamy, czy mamy dziś jakieś święto.
         holiday = isHoliday();
         if (!holiday) {
@@ -98,6 +96,10 @@
         }
 
         if (today.getDate() < 20) {
+            return false;
+        }
+
+        if (today.getDate() > 30) {
             return false;
         }
 
