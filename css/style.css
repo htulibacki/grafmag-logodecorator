@@ -1,0 +1,64 @@
+html, body {
+    margin: 0px;
+    font-family: Roboto, sans-serif;
+}
+
+#container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 380px;
+    text-align: center;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+#container h1 {
+    color: #acb4bd;
+    font-weight: 300;
+    font-size: 46px;
+    margin-bottom: 50px;
+}
+
+#container form {
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+#container form input {
+    font-family: Roboto,sans-serif;
+    color: #acb4bd;
+    font-size: 14px;
+    border: 1px solid #d8dee5;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 9px 14px;
+    width: 270px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 40px;
+}
+
+#container p {
+    color: #46494f;
+    line-height: 1.43em;
+    font-size: 14px;
+}
+
+/* Ustawiamy klasy odpowiedzialne za wyświetlanie prawidłowego obrazka */
+#logoDecoratorElement.christmasDecoration {
+    background: transparent url('../images/boze-narodzenie.png') no-repeat center center;
+}
+
+#logoDecoratorElement.newYearsEveDecoration {
+    background: transparent url('../images/sylwester.png') no-repeat center center;
+}
+
+#logoDecoratorElement.newYearDecoration {
+    background: transparent url('../images/nowy-rok.png') no-repeat center center;
+}
+
+#logoDecoratorElement.easterDecoration {
+    background: transparent url('../images/wielkanoc.png') no-repeat center center;
+}
